@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --background-color-dark: #111110;
+    font-size: 12px;
+    @media (min-width: 1024px) {
+        font-size: 16px;
+    }
+}
+
+body {
+    background-color: var(--background-color-dark);
+    font-family: "Manrope", sans-serif;
+}
