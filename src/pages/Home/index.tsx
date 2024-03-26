@@ -1,6 +1,21 @@
 import { ButtonBackgroundShine } from "../../components/ButtonBackgroundShine/ButtonBackgroundShine"
 import { ButtonRotateBorder } from "../../components/ButtonRotateBorder/ButtonRotateBorder"
 import { Header } from "../../components/Header/Header"
+import { Stacks } from "../../components/Stacks/Stacks"
+import { motion } from "framer-motion"
+
+const container = {
+    hidden: { opacity: 1, scale: 0 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2
+      }
+    }
+  };
+
 
 export default function Home() {
     return (
@@ -16,10 +31,11 @@ export default function Home() {
                                 <span>Focado no Back-End.</span>
                             </h2>
                             
-                            <div className="flex flex-col w-full gap-4 md:flex-row lg:flex-row mt-2">
+                            <motion.div className="flex flex-col w-full gap-4 md:flex-row lg:flex-row mt-2" 
+                            variants={container} initial="hidden" animate="visible">
                                 <ButtonRotateBorder>
                                     <a className="w-full" title="Github" href="http://github.com/lucassch2410" target="_blank">
-                                        <span>Github</span>
+                                        <span className="subpixel-antialiased">Github</span>
                                     </a>
                                 </ButtonRotateBorder>
 
@@ -34,15 +50,13 @@ export default function Home() {
                                         <span>WhatsApp</span>
                                     </a>
                                 </ButtonRotateBorder>
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
                 </section>
 
                 <section className="mx-auto flex max-w-5xl flex-col py-8 xl:px-0">
-                    <div className="flex flex-col gap-6 md-max-w-3xl">
-                        <h1>asdasdiaaij</h1>
-                    </div>
+                    <Stacks/>
                 </section>
             </main>
         </>
