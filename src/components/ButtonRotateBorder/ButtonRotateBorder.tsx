@@ -15,8 +15,8 @@ const item = {
 
 export function ButtonRotateBorder({ children }: ButtonProps) {
     return (
-      <motion.button className="relative inline-flex overflow-hidden rounded-xl p-px hover:scale-110 transition duration-300 ease-in-out"
-      variants={item}>
+      <motion.button className="relative inline-flex overflow-hidden rounded-xl p-px"
+      variants={item} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
         <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] 
         bg-[conic-gradient(from_90deg_at_50%_50%,#c2c2c2_0%,#505050_50%,#bebebe_100%)]" />
         <span className="subpixel-antialiased inline-flex h-full w-full cursor-pointer items-center justify-center rounded-[11px] bg-neutral-950

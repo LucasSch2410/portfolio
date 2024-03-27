@@ -25,29 +25,14 @@ const item = {
 export const Stacks = () => {
     const constraintsRef = useRef(null);
 
-    const tabs = [
-        {
-            title: "S",
-            value: "",
-        },
-        {
-            title: "P",
-            value: "projects",
-        },
-        {
-            title: "Q",
-            value: "about",
-        },
-    ];
-
     return (
         <motion.div className="w-full" ref={constraintsRef}>
             <motion.div className="py-8 place-content-center place-items-center overflow-hidden flex flex-col 
         bg-[rgba(255,_255,_255,_0.2)] rounded-[30px]" variants={container} initial="hidden" animate="visible">
-                <motion.div className="w-[50px] h-[50px] bg-[white] rounded-2xl hover:cursor-pointer" drag dragConstraints={constraintsRef} variants={item} />
-                <motion.div className="w-[50px] h-[50px] bg-[white] rounded-2xl hover:cursor-pointer" drag dragConstraints={constraintsRef} variants={item} />
-                <motion.div className="w-[50px] h-[50px] bg-[white] rounded-2xl hover:cursor-pointer" drag dragConstraints={constraintsRef} variants={item} />
-                <motion.div className="w-[50px] h-[50px] bg-[white] rounded-2xl hover:cursor-pointer" drag dragConstraints={constraintsRef} variants={item} />
+                <motion.div className="w-[50px] h-[50px] bg-[white] rounded-2xl hover:cursor-grab" drag dragConstraints={constraintsRef} variants={item} />
+                <motion.div className="w-[50px] h-[50px] bg-[white] rounded-2xl hover:cursor-grab" drag dragConstraints={constraintsRef} variants={item} />
+                <motion.div className="w-[50px] h-[50px] bg-[white] rounded-2xl hover:cursor-grab" drag dragConstraints={constraintsRef} variants={item} />
+                <motion.div className="w-[50px] h-[50px] bg-[white] rounded-2xl hover:cursor-grab" drag dragConstraints={constraintsRef} variants={item} />
             </motion.div>
         </motion.div>
 

@@ -1,6 +1,4 @@
-import { ButtonBackgroundShine } from "../../components/ButtonBackgroundShine/ButtonBackgroundShine"
 import { ButtonRotateBorder } from "../../components/ButtonRotateBorder/ButtonRotateBorder"
-import { Header } from "../../components/Header/Header"
 import { Stacks } from "../../components/Stacks/Stacks"
 import { motion } from "framer-motion"
 
@@ -16,6 +14,19 @@ const container = {
     }
   };
 
+const title = {
+    initial: { opacity: 0, x: -220 },
+    animate: { 
+        opacity: 1,
+        x: 0,
+        transition: {
+            type: "spring",
+            stiffness: 160,
+            damping: 20        
+        }
+    }
+}
+
 
 export default function Home() {
     return (
@@ -23,13 +34,15 @@ export default function Home() {
             <main>
                 <section className="mx-auto flex max-w-5xl flex-col justify-start gap-4 overflow py-8 xl:px-0">
                     <div className="flex flex-col gap-6 md:max-w-3xl">
-                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
+                        <motion.h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white" 
+                        variants={title} initial="initial" animate="animate" >
                             Lucas Schroeder -- Full-Stack Developer
-                        </h1>
+                        </motion.h1>
                         <div className="flex flex-col gap-6 md:max-w-2xl">
-                            <h2 className="text-lg font-medium text-[#c0c0c0] ">
+                            <motion.h2 className="text-lg font-medium text-[#c0c0c0]"
+                            variants={title} initial="initial" animate="animate">
                                 <span>Focado no Back-End.</span>
-                            </h2>
+                            </motion.h2>
                             
                             <motion.div className="flex flex-col w-full gap-4 md:flex-row lg:flex-row mt-2" 
                             variants={container} initial="hidden" animate="visible">
@@ -55,7 +68,7 @@ export default function Home() {
                     </div>
                 </section>
 
-                <section className="mx-auto flex max-w-5xl flex-col py-8 xl:px-0">
+                <section className="mx-auto flex max-w-5xl flex-col my-8 xl:px-0">
                     <Stacks/>
                 </section>
             </main>
