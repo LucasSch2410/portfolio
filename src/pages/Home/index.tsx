@@ -1,3 +1,4 @@
+import { AnimatedText } from "../../components/AnimatedText/AnimatedText";
 import { ButtonRotateBorder } from "../../components/ButtonRotateBorder/ButtonRotateBorder"
 import { Stacks } from "../../components/Stacks/Stacks"
 import { motion } from "framer-motion"
@@ -32,7 +33,7 @@ export default function Home() {
     return (
         <>
             <main>
-                <section className="mx-auto flex max-w-5xl flex-col justify-start gap-4 overflow py-8 xl:px-0">
+                <section className="mx-auto flex max-w-5xl flex-col justify-start gap-4 overflow py-8 px-10 md:px-0">
                     <div className="flex flex-col gap-6 md:max-w-3xl">
                         <motion.h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white" 
                         variants={title} initial="initial" animate="animate" >
@@ -59,7 +60,7 @@ export default function Home() {
                                 </ButtonRotateBorder>
 
                                 <ButtonRotateBorder>
-                                    <a className="w-full" title="Redes sociais" href="http://github.com/lucassch2410" target="_blank">
+                                    <a className="w-full" title="WhatsApp" href="https://wa.me/5547988139924" target="_blank">
                                         <span>WhatsApp</span>
                                     </a>
                                 </ButtonRotateBorder>
@@ -68,11 +69,19 @@ export default function Home() {
                     </div>
                 </section>
 
-                <section className="mx-auto flex max-w-5xl flex-col my-8 xl:px-0">
+                <section className="mx-auto flex max-w-5xl flex-col my-8 px-10 md:px-0">
                     <Stacks/>
+                </section>
+
+                <section className="mx-auto flex max-w-5xl flex-col my-8 px-10 md:px-0">
+                    <AnimatedText once text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. A odio tempore saepe doloremque natus. Officiis quam quasi, porro quos nulla libero officia quis beatae. Consectetur eos aspernatur nam ab repellendus!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A odio tempore saepe doloremque natus. Officiis quam quasi, porro quos nulla libero officia quis beatae. Consectetur eos aspernatur nam ab repellendus!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A odio tempore saepe doloremque natus. Officiis quam quasi, porro quos nulla libero officia quis beatae. Consectetur eos aspernatur nam ab repellendus!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A odio tempore saepe doloremque natus. Officiis quam quasi, porro quos nulla libero officia quis beatae. Consectetur eos aspernatur nam ab repellendus!" 
+                    el="h1" className="text-lg font-medium text-[#c0c0c0]" delay={1}/>
                 </section>
             </main>
         </>
 
-    )
+    ) 
 }
