@@ -12,14 +12,14 @@ export default function Home() {
 
             <section className="max-w-5xl flex flex-col lg:flex-row gap-10 lg:gap-20 mx-auto mt-14">
                 <div className="w-full lg:w-1/2">
-                    <Stacks />
-                </div>
-
-                <div className="w-full lg:w-1/2">
                     <AnimatedText once text={["Meu nome é Lucas Schroeder.", "Sou um desenvolvedor web com dois anos de experiência e estou cursando o último semestre da faculdade de Análise e Desenvolvimento de sistemas.",
                         "Tenho sólidos conhecimentos em desenvolvimentos de aplicações web usando JavaScript, TypeScript, NodeJS e React.",
-                        "Estudando Python e Java no momento."]}
-                        el="p" className="text-lg font-medium text-neutral-300 px-5" />
+                        "Estudando Python e Java no momento. Interessado em linguagens orientada a objetos e Data Science/AI."]}
+                        el="p" className="text-xl lg:text-xl font-medium text-neutral-300" />
+                </div>
+                
+                <div className="w-full lg:w-1/2">
+                    <Stacks />
                 </div>
             </section>
 

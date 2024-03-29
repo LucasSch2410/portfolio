@@ -32,8 +32,8 @@ export function CardRevealedPointer({ children, title }: DivProps) {
       />
       <div className="relative flex flex-col gap-3 rounded-xl border border-white/10 px-4 py-5">
         <div className="space-y-2">
-          <h3 className="text-xl font-semibold text-neutral-200">{title}</h3>
-          <p className="text-base leading-[1.5] text-neutral-400">
+          <h3 className="text-2xl lg:text-xl font-semibold text-neutral-200">{title}</h3>
+          <p className="text-lg lg:text-base leading-[1.5] text-neutral-400">
             {children}
           </p>
         </div>
