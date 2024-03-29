@@ -7,7 +7,7 @@ export default function Home() {
     return (
         <main className="max-w-5xl mx-auto flex-col py-6 px-10 md:px-0">
             <section className="max-w-5xl flex flex-col justify-start gap-4 mx-auto py-8 overflow">
-                <SocialTitle/>
+                <SocialTitle />
             </section>
 
             <section className="max-w-5xl flex flex-col lg:flex-row gap-16 lg:gap-20 mx-auto mt-6 lg:mt-14">
@@ -17,14 +17,14 @@ export default function Home() {
                         "Estudando Python e Java no momento. Interessado em linguagens orientada a objetos e Data Science/AI."]}
                         el="p" className="text-xl lg:text-xl font-medium text-neutral-300" />
                 </div>
-                
+
                 <div className="w-full lg:w-1/2">
                     <Stacks />
                 </div>
             </section>
 
             <section className="max-w-5xl flex flex-col justify-start mx-auto mt-14">
-                <AllCards/>
+                <AllCards />
             </section>
         </main>
     )

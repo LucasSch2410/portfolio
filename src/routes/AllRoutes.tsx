@@ -18,8 +18,8 @@ export default function AllRoutes() {
                     <Route path="/projects" element={<Projects />} />
                     <Route path="/about" element={<Projects />} />
                 </Routes>
-                <Footer/>
-                <Mouse refMouse={refMouse}/>
+                <Footer />
+                <Mouse refMouse={refMouse} />
             </div>
         </BrowserRouter>
     )

@@ -39,8 +39,7 @@ export const Stacks = () => {
         },
         {
             name: "Flask",
-            image: icons.flask,
-            clicks: 0
+            image: icons.flask        
         },
         {
             name: "FastAPI",
@@ -72,8 +71,7 @@ export const Stacks = () => {
         },
         {
             name: "Linux",
-            image: icons.linux,
-            clicks: 0
+            image: icons.linux
         },
         {
             name: "GitHub",

@@ -63,18 +63,18 @@ body {
 body::-webkit-scrollbar {
     width: 10px;
 }
- 
+
 /* Track */
 body::-webkit-scrollbar-track {
     background: rgb(24 24 27 / var(--tw-bg-opacity));
 }
- 
+
 /* Handle */
 body::-webkit-scrollbar-thumb {
     background: #4b4b4b;
     border-radius: 5px;
 }
- 
+
 /* Handle on hover */
 body::-webkit-scrollbar-thumb:hover {
     background: #838383;

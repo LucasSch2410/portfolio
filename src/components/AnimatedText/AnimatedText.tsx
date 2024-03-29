@@ -12,6 +12,7 @@ type AnimatedTextProps = {
     };
 };
 
+
 const defaultAnimations = {
     hidden: {
         opacity: 0,

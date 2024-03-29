@@ -2,7 +2,7 @@ import useMouse from "@react-hook/mouse-position";
 import { motion } from "framer-motion"
 // import { useState } from "react";
 
-export function Mouse({refMouse}:any) {
+export function Mouse({ refMouse }: any) {
     // const [cursorText, setCursorText] = useState("");
     // const [cursorVariant, setCursorVariant] = useState("project");
 
@@ -36,7 +36,7 @@ export function Mouse({refMouse}:any) {
             x: mouseXPosition - 22,
             y: mouseYPosition - 22,
             transition: {
-                type:"tween",
+                type: "tween",
                 duration: 0
             }
         },
@@ -73,15 +73,15 @@ export function Mouse({refMouse}:any) {
     // }
 
     return (
-        <> {window.innerWidth < 768 
-        ? <></> 
-        :
+        <> {window.innerWidth < 768
+            ? <></>
+            :
             <motion.div variants={variants}
                 className="circle"
                 animate={"project"}>
                 <span className='cursorText'></span>
             </motion.div>
-            }
+        }
         </>
     )
 }

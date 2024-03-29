@@ -30,7 +30,7 @@ export function ButtonRotateBorder({ children, copyEmail }: ButtonProps) {
                 draggable: true,
                 progress: undefined,
                 theme: "dark",
-                });
+            });
         }
     };
 

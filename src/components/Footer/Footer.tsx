@@ -33,44 +33,54 @@ export function Footer() {
 
     const socialIcons = [
         {
+            name: "GitHub",
             url: "https://github.com/lucasSch2410/",
             icon: icons.github
-        },        
+        },
         {
+            name: "Linkedin",
             url: "https://www.linkedin.com/in/schroederdev/",
             icon: icons.linkedin
-        },       
+        },
         {
+            name: "E-mail",
             url: "mailto:lucasschroeder2410@gmail.com",
             icon: icons.email
 
-        },        
+        },
         {
+            name: "WhatsApp",
             url: "https://wa.me/5547988139924",
             icon: icons.whatsapp
 
-        },        
+        },
         {
+            name: "Discord",
             url: "https://discordapp.com/users/257552506169720832/",
             icon: icons.discord
-        },        
+        },
         {
+            name: "Instagram",
             url: "https://www.instagram.com/_lbored/",
             icon: icons.instagram
-        },        
+        },
         {
+            name: "Facebook",
             url: "https://www.facebook.com/lucas.schroeder.589/",
             icon: icons.facebook
-        },        
+        },
         {
+            name: "Twitter",
             url: "https://twitter.com/lucas_sch10",
             icon: icons.twitter
-        },        
+        },
         {
+            name: "Twitch",
             url: "https://www.twitch.tv/f1r3g0n",
             icon: icons.twitch
-        },        
+        },
         {
+            name: "Steam",
             url: "https://steamcommunity.com/id/MacarujaBR/",
             icon: icons.steam
         }
@@ -98,10 +108,10 @@ export function Footer() {
                         <motion.div className="flex flex-col items-center" whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }} key={iconIndex}>
                             <div className="w-[35px] h-[35px] bg-[white] rounded">
                                 <a href={icon.url} target="_blank">
-                                    <img className="p-1.5" src={icon.icon} alt=""/>
+                                    <img className="p-1.5" src={icon.icon} alt={icon.name} />
                                 </a>
                             </div>
-                        </motion.div>                    
+                        </motion.div>
                     ))}
                 </div>
             </motion.div>
