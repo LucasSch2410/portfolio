@@ -1,0 +1,13 @@
+export { default as fastapi } from '../assets/fastapi.svg';
+export { default as flask } from '../assets/flask.svg';
+export { default as github } from '../assets/github.svg';
+export { default as javascript } from '../assets/javascript.svg';
+export { default as linux } from '../assets/linux.svg';
+export { default as node } from '../assets/node.svg';
+export { default as postgresql } from '../assets/postgresql.svg';
+export { default as python } from '../assets/python.svg';
+export { default as react } from '../assets/react.svg';
+export { default as sqlite } from '../assets/sqlite.svg';
+export { default as styled } from '../assets/styled.svg';
+export { default as tailwind } from '../assets/tailwind.svg';
+export { default as typescript } from '../assets/typescript.svg';

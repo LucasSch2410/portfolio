@@ -1,11 +1,11 @@
 import useMouse from "@react-hook/mouse-position";
 import { motion } from "framer-motion"
-import React, { useState } from "react";
+// import { useState } from "react";
 
 
 export function Mouse({refMouse}:any) {
-    const [cursorText, setCursorText] = useState("");
-    const [cursorVariant, setCursorVariant] = useState("project");
+    // const [cursorText, setCursorText] = useState("");
+    // const [cursorVariant, setCursorVariant] = useState("project");
 
     const mouse = useMouse(refMouse, {
         fps: 165
@@ -53,31 +53,31 @@ export function Mouse({refMouse}:any) {
         }
     };
 
-    function projectEnter() {
-        setCursorText("");
-        setCursorVariant("project");
-    }
+    // function projectEnter() {
+    //     setCursorText("");
+    //     setCursorVariant("project");
+    // }
 
-    function projectLeave() {
-        setCursorText("");
-        setCursorVariant("default");
-    }
+    // function projectLeave() {
+    //     setCursorText("");
+    //     setCursorVariant("default");
+    // }
 
-    function contactEnter() {
-        setCursorText("👋");
-        setCursorVariant("contact");
-    }
+    // function contactEnter() {
+    //     setCursorText("👋");
+    //     setCursorVariant("contact");
+    // }
 
-    function contactLeave() {
-        setCursorText("");
-        setCursorVariant("default");
-    }
+    // function contactLeave() {
+    //     setCursorText("");
+    //     setCursorVariant("default");
+    // }
 
     return (
         <motion.div variants={variants}
             className="circle"
-            animate={cursorVariant}>
-            <span className='cursorText'>{cursorText}</span>
+            animate={"project"}>
+            <span className='cursorText'></span>
         </motion.div>
     )
 }

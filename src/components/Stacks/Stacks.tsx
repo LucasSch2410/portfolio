@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
+import * as icons from '../../utils/stacksHandler'; 
 
 const container = {
     hidden: { opacity: 1, scale: 0 },
@@ -33,51 +34,51 @@ export const Stacks = () => {
     const stacks = [
         {
             name: "Python",
-            image: "python",
+            image: icons.python,
         },
         {
             name: "Flask",
-            image: "flask",
+            image: icons.flask,
         },
         {
             name: "FastAPI",
-            image: "fastapi",
+            image: icons.fastapi,
         },
         {
             name: "JavaScript",
-            image: "javascript",
+            image: icons.javascript,
         },
         {
             name: "TypeScript",
-            image: "typescript",
+            image: icons.typescript,
         },
         {
             name: "NodeJS",
-            image: "node",
+            image: icons.node,
         },
         {
             name: "React",
-            image: "react",
+            image: icons.react,
         },
         {
             name: "Styled Components",
-            image: "styled",
+            image: icons.styled,
         },
         {
             name: "Tailwind",
-            image: "tailwind",
+            image: icons.tailwind,
         },
         {
             name: "Linux",
-            image: "linux",
+            image: icons.linux,
         },
         {
             name: "GitHub",
-            image: "github",
+            image: icons.github,
         },
         {
             name: "PostgreSQL",
-            image: "postgresql",
+            image: icons.postgresql,
         }
     ]
 
@@ -89,7 +90,7 @@ export const Stacks = () => {
                     <motion.div className="w-[50px] h-[50px] bg-[white] rounded-2xl overflow-hidden p-1.5 col-span-1"
                     variants={item} key={stackIndex}
                     whileHover={item.whileHover} whileTap={item.whileTap}>
-                        <img src={"../../src/assets/"+ stack.image + ".svg"} alt={stack.name} draggable="false"/>
+                        <img src={stack.image} alt={stack.name} draggable="false"/>
                     </motion.div>
                 ))}
             </motion.div>
