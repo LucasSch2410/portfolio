@@ -12,13 +12,13 @@ export default function AllRoutes() {
     return (
         <div className='h-screen' ref={refMouse}>
             <BrowserRouter>
-                    <Header />
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/projects" element={<Projects />} />
-                    </Routes>
-                    <Footer />
-                    <Mouse refMouse={refMouse} />
+                <Header />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/projects" element={<Projects />} />
+                </Routes>
+                <Footer />
+                <Mouse refMouse={refMouse} />
             </BrowserRouter>
         </div>
     )
