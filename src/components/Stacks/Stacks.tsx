@@ -96,7 +96,7 @@ export const Stacks = () => {
                         <div className="w-[50px] h-[50px] bg-[white] rounded-2xl overflow-hidden p-1.5 col-span-1">
                             <img src={stack.image} alt={stack.name} draggable="false" />
                         </div>
-                        <span className="mt-2">{stack.name}</span>
+                        <span className="mt-2 whitespace-nowrap">{stack.name}</span>
                     </motion.div>                    
                 ))}
                 

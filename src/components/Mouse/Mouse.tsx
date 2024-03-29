@@ -73,10 +73,15 @@ export function Mouse({refMouse}:any) {
     // }
 
     return (
-        <motion.div variants={variants}
-            className="circle"
-            animate={"project"}>
-            <span className='cursorText'></span>
-        </motion.div>
+        <> {window.innerWidth < 768 
+        ? <></> 
+        :
+            <motion.div variants={variants}
+                className="circle"
+                animate={"project"}>
+                <span className='cursorText'></span>
+            </motion.div>
+            }
+        </>
     )
 }
