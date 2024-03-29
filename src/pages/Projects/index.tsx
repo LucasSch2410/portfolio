@@ -3,7 +3,7 @@ export default function Projects() {
     return (
         <>
             <main>
-                bobobobobobo
+                Test.
             </main>
         </>
 

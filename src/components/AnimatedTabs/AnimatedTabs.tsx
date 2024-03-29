@@ -4,59 +4,59 @@ import { motion } from "framer-motion";
 import { cn } from "../../utils/cn";
 
 type Tab = {
-  title: string;
-  value: string;
+    title: string;
+    value: string;
 };
 
 function Tabs({
-  tabs,
-  containerClassName,
-  activeTabClassName,
-  tabClassName,
+    tabs,
+    containerClassName,
+    activeTabClassName,
+    tabClassName,
 }: {
-  tabs: Tab[];
-  containerClassName?: string;
-  activeTabClassName?: string;
-  tabClassName?: string;
+    tabs: Tab[];
+    containerClassName?: string;
+    activeTabClassName?: string;
+    tabClassName?: string;
 }) {
-  const [activeIdx, setActiveIdx] = useState<string>("");
+    const [activeIdx, setActiveIdx] = useState<string>("");
 
-  return (
-    <div
-      className={cn(
-        "flex flex-wrap items-center justify-center relative lg:text-sm",
-        containerClassName
-      )}
-    >
-      {tabs.map((tab, tabIndex) => (
-        <Link to={"/" + tab.value} key={tabIndex}>
-        <button
-          onClick={() => setActiveIdx(tab.value)}
-          className={cn(
-            "relative px-4 py-2 rounded-full z-[0]",
-            { "z-0": activeIdx === tab.value},
-            tabClassName
-          )}
-          style={{
-            transformStyle: "preserve-3d",
-          }}
+    return (
+        <div
+            className={cn(
+                "flex flex-wrap items-center justify-center relative lg:text-sm",
+                containerClassName
+            )}
         >
-          {location.pathname === "/" + tab.value && (
-            <motion.div
-              layoutId="clickedbutton"
-              transition={{ type: "spring", bounce: 0.3, duration: 0.6 }}
-              className={cn(
-                "absolute inset-0 bg-neutral-800 rounded-full",
-                activeTabClassName
-              )}
-            />
-          )}
-            <span className="relative block text-neutral-100">{tab.title}</span>
-        </button>
-        </Link>
-      ))}
-    </div>
-  );
+            {tabs.map((tab, tabIndex) => (
+                <Link to={"/" + tab.value} key={tabIndex}>
+                    <button
+                        onClick={() => setActiveIdx(tab.value)}
+                        className={cn(
+                            "relative px-4 py-2 rounded-full z-[0]",
+                            { "z-0": activeIdx === tab.value },
+                            tabClassName
+                        )}
+                        style={{
+                            transformStyle: "preserve-3d",
+                        }}
+                    >
+                        {location.pathname === "/" + tab.value && (
+                            <motion.div
+                                layoutId="clickedbutton"
+                                transition={{ type: "spring", bounce: 0.3, duration: 0.6 }}
+                                className={cn(
+                                    "absolute inset-0 bg-neutral-800 rounded-full",
+                                    activeTabClassName
+                                )}
+                            />
+                        )}
+                        <span className="relative block text-neutral-100">{tab.title}</span>
+                    </button>
+                </Link>
+            ))}
+        </div>
+    );
 }
 
 export function AnimatedTabs() {
