@@ -2,15 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+*, a, button {
     @media (min-width: 768px) {
-        cursor: none;
-    }
-}
-
-a {
-    @media (min-width: 768px) {
-        cursor: none;
+        cursor: none !important;
     }
 }
 
@@ -78,4 +72,20 @@ body::-webkit-scrollbar-thumb {
 /* Handle on hover */
 body::-webkit-scrollbar-thumb:hover {
     background: #838383;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #838383 !important;
+    fill: #838383 !important;
+    stroke: #838383 !important;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    cursor: none;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #838383 !important; 
 }
