@@ -10,7 +10,7 @@ const container = {
         transition: {
             delay: 0.6,
             delayChildren: 1.2,
-            staggerChildren: 0.8
+            staggerChildren: 0.4
         }
     }
 };
@@ -84,7 +84,7 @@ export const Stacks = () => {
 
     return (
         <motion.div className="w-full" ref={constraintsRef}>
-            <motion.div className="grid grid-cols-3 place-content-center place-items-center overflow-hidden py-8 bg-[rgba(255,_255,_255,_0.25)] rounded-[30px] gap-y-10"
+            <motion.div className="grid grid-cols-3 place-content-center place-items-center overflow-hidden py-8 bg-neutral-900 border border-neutral-700 rounded-xl gap-y-10"
                 variants={container} initial="hidden" animate="visible">
 
                 {stacks.map((stack, stackIndex) => (

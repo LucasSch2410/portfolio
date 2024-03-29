@@ -36,18 +36,22 @@ export const AnimatedText = ({
     const controls = useAnimation();
     const textArray = Array.isArray(text) ? text : [text];
     const ref = useRef(null);
-    const isInView = useInView(ref, { amount: 0.5, once });
+    const isInView = useInView(ref, { amount: 0.3, once });
 
     useEffect(() => {
-        const timeoutId = setTimeout(() => {
-            if (isInView) {
-                controls.start("visible");
-            } else {
-                controls.start("hidden");
-            }
-        }, 1850);
+        const isDesktop = window.innerWidth > 1024;
 
-        return () => clearTimeout(timeoutId);
+        if (isInView) {
+            if (isDesktop) {
+                setTimeout(() => {
+                    controls.start("visible");
+                }, 1250);
+            } else {
+                controls.start("visible");
+            }
+        } else {
+            controls.start("hidden");
+        }
     }, [isInView]);
 
     return (
@@ -61,7 +65,7 @@ export const AnimatedText = ({
                     visible: {
                         transition:
                         {
-                            staggerChildren: 0.05
+                            staggerChildren: 0.02
                         }
                     },
                     hidden: {},

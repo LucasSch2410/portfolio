@@ -2,7 +2,7 @@ import { AnimatedTabs } from "../AnimatedTabs/AnimatedTabs";
 
 export function Header() {
     return (
-        <header className="">
+        <header>
             <div className="max-w-5xl mx-auto px-10 md:px-0">
                 <div className="flex text-neutral-100">
                     <h1 className="text-[50px] font-light whitespace-nowrap">LS</h1>
