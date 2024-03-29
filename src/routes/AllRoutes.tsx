@@ -2,9 +2,7 @@ import Home from '../pages/Home';
 import Projects from '../pages/Projects';
 import { Header } from '../components/Header/Header';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
-import useMouse from "@react-hook/mouse-position";
+import React from 'react';
 import { Mouse } from '../components/Mouse/Mouse';
 
 export default function AllRoutes() {

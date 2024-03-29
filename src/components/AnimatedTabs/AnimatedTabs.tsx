@@ -28,10 +28,9 @@ function Tabs({
         containerClassName
       )}
     >
-      {tabs.map((tab) => (
-        <Link to={"/" + tab.value}>
+      {tabs.map((tab, tabIndex) => (
+        <Link to={"/" + tab.value} key={tabIndex}>
         <button
-          key={tab.title}
           onClick={() => setActiveIdx(tab.value)}
           className={cn(
             "relative px-4 py-2 rounded-full z-[0]",

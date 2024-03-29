@@ -11,8 +11,8 @@ export function Mouse({refMouse}:any) {
         fps: 165
     });
 
-    let mouseXPosition = 0;
-    let mouseYPosition = 0;
+    let mouseXPosition = -100;
+    let mouseYPosition = -100;
 
     if (mouse.clientX !== null) {
         mouseXPosition = mouse.clientX;

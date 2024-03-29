@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     children: ReactNode;
+    copyEmail?: boolean;
 }
 
 const item = {
@@ -13,9 +14,17 @@ const item = {
     }
   };
 
-export function ButtonRotateBorder({ children }: ButtonProps) {
+
+export function ButtonRotateBorder({ children, copyEmail }: ButtonProps) {
+
+    const handleClick = () => {
+        if (copyEmail) {
+            navigator.clipboard.writeText("lucasschroeder2410@gmail.com");
+        }
+    };
+
     return (
-      <motion.button className="relative inline-flex overflow-hidden rounded-xl p-px"
+      <motion.button className="relative inline-flex overflow-hidden rounded-xl p-px" onClick={handleClick}
       variants={item} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
         <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] 
         bg-[conic-gradient(from_90deg_at_50%_50%,#c2c2c2_0%,#505050_50%,#bebebe_100%)]" />
