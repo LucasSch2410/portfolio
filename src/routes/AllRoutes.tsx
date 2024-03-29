@@ -11,7 +11,6 @@ export default function AllRoutes() {
 
     return (
         <BrowserRouter>
-            <div className='h-screen' ref={refMouse}>
                 <Header />
                 <Routes>
                     <Route path="/" element={<Home />} />
@@ -20,7 +19,6 @@ export default function AllRoutes() {
                 </Routes>
                 <Footer />
                 <Mouse refMouse={refMouse} />
-            </div>
         </BrowserRouter>
     )
 }
