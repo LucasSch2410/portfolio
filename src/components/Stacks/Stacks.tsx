@@ -84,7 +84,7 @@ export const Stacks = () => {
 
     return (
         <motion.div className="w-full" ref={constraintsRef}>
-            <motion.div className="grid grid-cols-3 place-content-center place-items-center overflow-hidden py-8 bg-[rgba(255,_255,_255,_0.2)] rounded-[30px] gap-y-10"
+            <motion.div className="grid grid-cols-3 place-content-center place-items-center overflow-hidden py-8 bg-[rgba(255,_255,_255,_0.25)] rounded-[30px] gap-y-10"
                 variants={container} initial="hidden" animate="visible">
 
                 {stacks.map((stack, stackIndex) => (

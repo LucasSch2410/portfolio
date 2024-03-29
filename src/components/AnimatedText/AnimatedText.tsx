@@ -45,7 +45,7 @@ export const AnimatedText = ({
             } else {
                 controls.start("hidden");
             }
-        }, 3000);
+        }, 1850);
 
         return () => clearTimeout(timeoutId);
     }, [isInView]);
