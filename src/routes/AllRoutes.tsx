@@ -10,15 +10,16 @@ export default function AllRoutes() {
     const refMouse = React.useRef(null);
 
     return (
-        <BrowserRouter>
-                <Header />
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/projects" element={<Projects />} />
-                    <Route path="/about" element={<Projects />} />
-                </Routes>
-                <Footer />
-                <Mouse refMouse={refMouse} />
-        </BrowserRouter>
+        <div className='h-screen' ref={refMouse}>
+            <BrowserRouter>
+                    <Header />
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/projects" element={<Projects />} />
+                    </Routes>
+                    <Footer />
+                    <Mouse refMouse={refMouse} />
+            </BrowserRouter>
+        </div>
     )
 }
