@@ -63,7 +63,7 @@ export default function SocialTitle() {
 
                     {social.map((item, itemIndex) => (
                         <ButtonRotateBorder key={itemIndex}>
-                            <a className="flex gap-2 items-center px-4 py-2 text-2xl md:text-xl lg:text-base" title={item.title} href={item.link} target="_blank">
+                            <a className="flex items-center justify-center w-full gap-2 px-4 py-2 text-2xl md:text-xl lg:text-base" title={item.title} href={item.link} target="_blank">
                                 <span className="subpixel-antialiased">{item.title}</span>
                                 <item.logo />
                             </a>
@@ -71,7 +71,7 @@ export default function SocialTitle() {
                     ))}
 
                     <ButtonRotateBorder copyEmail>
-                        <div className="flex gap-2 justify-center items-center px-4 py-2 text-2xl md:text-xl lg:text-base">
+                        <div className="flex items-center justify-center w-full gap-2 px-4 py-2 text-2xl md:text-xl lg:text-base">
                             <span>E-mail</span>
                             <Copy />
                         </div>
