@@ -45,7 +45,7 @@ export const AnimatedText = ({
             if (isDesktop) {
                 setTimeout(() => {
                     controls.start("visible");
-                }, 1250);
+                }, 250);
             } else {
                 controls.start("visible");
             }

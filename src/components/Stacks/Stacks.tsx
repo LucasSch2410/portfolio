@@ -8,7 +8,7 @@ const container = {
         opacity: 1,
         scale: 1,
         transition: {
-            delay: 0.6,
+            delay: 0.85,
             delayChildren: 1.2,
             staggerChildren: 0.4
         }
