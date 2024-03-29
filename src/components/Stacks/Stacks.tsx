@@ -21,11 +21,12 @@ const item = {
         opacity: 1,
     },
     whileHover: {
-        scale: 1.3
+        scale: 1.3,
     },
     whileTap: {
-        scale: 0.9
-    },
+        scale: 0.9,
+        transition: {type: "spring", bounce: 0.65 }
+    }
 };
 
 export const Stacks = () => {

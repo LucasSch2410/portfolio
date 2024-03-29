@@ -1,5 +1,6 @@
 import { ButtonHTMLAttributes, ReactNode } from "react";
 import { motion } from "framer-motion";
+import { toast } from "react-toastify";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     children: ReactNode;
@@ -20,6 +21,16 @@ export function ButtonRotateBorder({ children, copyEmail }: ButtonProps) {
     const handleClick = () => {
         if (copyEmail) {
             navigator.clipboard.writeText("lucasschroeder2410@gmail.com");
+            toast('E-mail copiado!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                });
         }
     };
 
