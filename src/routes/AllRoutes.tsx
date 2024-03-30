@@ -8,12 +8,14 @@ import { Header } from '../components/Header/Header';
 import { Footer } from '../components/Footer/Footer'
 import { Mouse } from '../components/Mouse/Mouse';
 import { NotFound } from '../pages/NotFound';
+import { useMouseContext } from '../context/mouseContext';
 
 export default function AllRoutes() {
     const refMouse = React.useRef(null);
+    const {setCursorVariant} = useMouseContext();
 
     return (
-        <div className='h-full' ref={refMouse}>
+        <div className='h-full' ref={refMouse} onMouseEnter={() => setCursorVariant("default")} onMouseLeave={() => setCursorVariant("mouseOut")}>
             <BrowserRouter>
                 <Header />
                 <Routes>

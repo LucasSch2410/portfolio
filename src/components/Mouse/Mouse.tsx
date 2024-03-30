@@ -78,6 +78,17 @@ export const Mouse = ({
                 y: { type: "spring", duration: 0.1 }
               }
         },
+        mouseOut: {
+            opacity: 0,
+            x: -100,
+            y: -100,
+
+            transition: {
+                opacity: { type: "tweek", duration: 0 },
+                x: { type: "tweek", duration: 0},
+                y: { type: "tweek", duration: 0}
+            }
+        }
     };
 
     // function projectEnter() {
