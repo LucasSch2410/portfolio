@@ -90,7 +90,7 @@ export const Footer = () => {
     ]
 
     return (
-        <motion.footer ref={ref} className="max-w-5xl mx-auto pb-8 lg:py-10 px-10 md:px-0" initial="hidden" animate={controls} variants={{
+        <motion.footer ref={ref} className="max-w-5xl mx-auto pb-8 lg:pb-8 lg:pt-4 px-10 md:px-0" initial="hidden" animate={controls} variants={{
             visible: {
                 transition:
                 {

@@ -8,7 +8,7 @@ export const Mouse = ({
     const {cursorVariants} = useMouseContext();
 
     const mouse = useMouse(refMouse, {
-        fps: 165
+        fps: 75
     });
 
     let mouseXPosition = -100;
@@ -29,37 +29,55 @@ export const Mouse = ({
             color: "#000",
             height: 50,
             width: 50,
-            fontSize: "18px",
-            x: mouseXPosition - 22,
-            y: mouseYPosition - 22,
+            x: mouseXPosition - 20,
+            y: mouseYPosition - 20,
             transition: {
+                type: "spring",
                 opacity: { duration: 0.2 },
                 backgroundColor: { duration: 0.2 },
                 height: { duration: 0.2 },
                 width: { duration: 0.2 },
                 fontSize: { duration: 0.2 },
-                x: { type: "tween", duration: 0 },
-                y: { type: "tween", duration: 0 }
+                x: { type: "spring", duration: 0.1 },
+                y: { type: "spring", duration: 0.1 }
               }
         },
         contact: {
             opacity: 1,
+            backgroundColor: "#ffffff",
+            color: "#000",
+            height: 25,
+            width: 25,
+            x: mouseXPosition - 18,
+            y: mouseYPosition - 18,
+            transition: {
+                type: "spring",
+                backgroundColor: { duration: 0.2 },
+                height: { duration: 0.2 },
+                width: { duration: 0.2 },
+                x: { type: "spring", duration: 0.1 },
+                y: { type: "spring", duration: 0.1 },
+              }
+        },
+        titles: {
+            opacity: 1,
             backgroundColor: "#fff",
             color: "#000",
-            height: 20,
-            width: 20,
-            fontSize: "18px",
-            x: mouseXPosition - 12,
-            y: mouseYPosition - 12,
+            height: 180,
+            width: 180,
+            x: mouseXPosition - 100,
+            y: mouseYPosition - 100,
             transition: {
+                type: "spring",
+                opacity: { duration: 0.2 },
                 backgroundColor: { duration: 0.2 },
                 height: { duration: 0.2 },
                 width: { duration: 0.2 },
                 fontSize: { duration: 0.2 },
-                x: { type: "tween", duration: 0.1 },
-                y: { type: "tween", duration: 0.1 },
+                x: { type: "spring", duration: 0.1 },
+                y: { type: "spring", duration: 0.1 }
               }
-        }
+        },
     };
 
     // function projectEnter() {
@@ -82,7 +100,7 @@ export const Mouse = ({
             ? <></>
             :
             <motion.div variants={variants}
-                className="circle"
+                className={"circle " + cursorVariants}
                 animate={cursorVariants}>
                 <span className='cursorText'></span>
             </motion.div>

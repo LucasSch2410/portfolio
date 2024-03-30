@@ -48,7 +48,10 @@ export const Repositories = () => {
     return !isLoad ? "" : (
         <motion.div variants={belowAnimation} initial="hidden" whileInView="visible" 
         viewport={{ amount: 0.2, once: true }}>
-            <h2 className="text-3xl lg:text-4xl font-bold text-white pb-5">Repositorios</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-white pb-5 w-fit"
+            onMouseEnter={() => setCursorVariant("titles")} onMouseLeave={() => setCursorVariant("default")}>
+                Repositorios
+            </h2>
             <div className="flex flex-col sm:grid sm:grid-cols-3 gap-7 sm:gap-5">
 
                 {repos.map((repo, repoIndex) => {

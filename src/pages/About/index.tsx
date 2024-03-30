@@ -1,15 +1,24 @@
 import { default as profile_pic } from "../../assets/profile-pic.jpeg"
+import { useMouseContext } from "../../context/mouseContext";
 
 export const About = () => {
+    const {setCursorVariant} = useMouseContext();
+
     return (
         <main className="max-w-5xl mx-auto flex-col py-6 px-10 md:px-0">
             <section className="max-w-5xl flex flex-col justify-start py-8">
-                <div className="flex flex-col-reverse lg:flex-row gap-10">
-                    <div className="flex flex-col gap-8 w-full lg:w-1/2">
-                        <h1 className="text-white text-6xl lg:text-5xl text-center">Sobre.</h1>
-                        <h2 className="text-white text-3xl lg:text-2xl text-center">O meu nome é Lucas Schroeder. Tenho 21 anos e sempre tô programando alguma coisa.</h2>
-
-                        <div className="flex flex-col gap-5 mt-10 text-white text-xl lg:text-lg">
+                <div className="grid grid-cols-2 flex-col-reverse lg:flex-row gap-10">
+                    <div className="order-1 col-span-2 flex flex-col gap-8 sm:w-1/2 mx-auto"
+                        onMouseEnter={() => setCursorVariant("titles")} onMouseLeave={() => setCursorVariant("default")}>
+                            <h1 className="text-white text-6xl lg:text-5xl text-center">
+                                Sobre.
+                            </h1>
+                            <h2 className="text-white text-3xl lg:text-2xl text-center">
+                                O meu nome é Lucas Schroeder. Tenho 21 anos e sempre tô programando alguma coisa.
+                            </h2>
+                    </div>
+                    <div className="order-3 sm:order-2 col-span-2 sm:col-span-1">
+                        <div className="flex flex-col gap-5 text-white text-xl lg:text-lg">
                             <p>Como muitos, cresci na frente de um computador a maior parte da minha vida. Não via nada que me interessava mais do que o digital. </p>
 
                             <p>Pegando um conceito abstrato como a criação, eu considero que me identifico muito com isso. <span className="font-extrabold">Desenvolver minhas próprias ferramentas</span>,
@@ -23,10 +32,10 @@ export const About = () => {
 
                             <p className="text-white text-xl lg:text-lg">Meus hobbies se baseiam em ver filmes recentes, jogos e estudar assuntos relacionados a tecnologia. Sou músico faz anos e toco piano, violão e guitarra.</p>
                         </div>
-
                     </div>
-                    <div className="w-full lg:w-1/2 rounded-xl overflow-hidden">
-                        <img src={profile_pic} alt="Lucas Schroeder" />
+                    <div className="order-2 sm:order-3 col-span-2 sm:col-span-1 rounded-xl overflow-hidden"
+                    onMouseEnter={() => setCursorVariant("contact")} onMouseLeave={() => setCursorVariant("default")}>
+                        <img src={profile_pic} alt="Lucas Schroeder"/>
                     </div>
                 </div>
             </section>

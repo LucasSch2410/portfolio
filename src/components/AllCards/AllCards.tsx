@@ -1,11 +1,13 @@
 import { motion, useAnimation, useInView } from "framer-motion"
 import { CardRevealedPointer } from "../../components/CardRevealedPointer/CardRevealedPointer";
 import { useEffect, useRef } from "react";
+import { useMouseContext } from "../../context/mouseContext";
 
 export const AllCards = () => {
     const controls = useAnimation();
     const ref = useRef(null)
     const isInView = useInView(ref, { amount: 0.3, once: true });
+    const {setCursorVariant} = useMouseContext();
 
     useEffect(() => {
         const isDesktop = window.innerWidth > 2000;
@@ -47,7 +49,9 @@ export const AllCards = () => {
             },
             hidden: {}
         }}>
-            <motion.h2 className="text-3xl font-bold text-white" variants={defaultAnimations}>O que estou fazendo no momento</motion.h2>
+            <motion.h2 className="text-3xl font-bold text-white" variants={defaultAnimations}
+            onMouseEnter={() => setCursorVariant("titles")} onMouseLeave={() => setCursorVariant("default")}
+            >O que estou fazendo no momento</motion.h2>
 
             <div className="flex flex-col sm:flex-row gap-10 mt-6">
                 <motion.div className="w-full sm:w-1/3" variants={defaultAnimations}>

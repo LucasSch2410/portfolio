@@ -6,7 +6,6 @@ import { useMouseContext } from "../../context/mouseContext";
 export const SocialTitle = () => {
     const {setCursorVariant} = useMouseContext();
 
-
     const container = {
         hidden: { opacity: 1, scale: 0 },
         visible: {
@@ -53,7 +52,8 @@ export const SocialTitle = () => {
     return (
         <div className="flex flex-col gap-6 md:max-w-3xl">
             <motion.h1 className="text-4xl lg:text-5xl font-bold text-white"
-                variants={title} initial="initial" animate="animate" >
+                variants={title} initial="initial" animate="animate"
+                onMouseEnter={() => setCursorVariant("titles")} onMouseLeave={() => setCursorVariant("default")} >
                 Lucas Schroeder -- Full-Stack Developer
             </motion.h1>
             <div className="flex flex-col gap-6 md:max-w-2xl">
@@ -67,7 +67,8 @@ export const SocialTitle = () => {
 
                     {social.map((item, itemIndex) => (
                         <ButtonRotateBorder key={itemIndex}>
-                            <a className="flex items-center justify-center w-full gap-2 px-4 py-2 text-2xl md:text-xl lg:text-base" title={item.title} href={item.link} target="_blank" onMouseEnter={() => setCursorVariant("contact")} onMouseLeave={() => setCursorVariant("default")}>
+                            <a className="flex items-center justify-center w-full gap-2 px-4 py-2 text-2xl md:text-xl lg:text-base" 
+                            title={item.title} href={item.link} target="_blank" onMouseEnter={() => setCursorVariant("contact")} onMouseLeave={() => setCursorVariant("default")}>
                                 <span className="subpixel-antialiased">{item.title}</span>
                                 <item.logo />
                             </a>
@@ -75,7 +76,8 @@ export const SocialTitle = () => {
                     ))}
 
                     <ButtonRotateBorder copyEmail>
-                        <div className="flex items-center justify-center w-full gap-2 px-4 py-2 text-2xl md:text-xl lg:text-base" onMouseEnter={() => setCursorVariant("contact")} onMouseLeave={() => setCursorVariant("default")}>
+                        <div className="flex items-center justify-center w-full gap-2 px-4 py-2 text-2xl md:text-xl lg:text-base" 
+                        onMouseEnter={() => setCursorVariant("contact")} onMouseLeave={() => setCursorVariant("default")}>
                             <span>E-mail</span>
                             <Copy />
                         </div>

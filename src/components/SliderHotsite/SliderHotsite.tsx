@@ -9,6 +9,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
+import { useMouseContext } from '../../context/mouseContext';
 
 type HotsiteArray = {
     name: string,
@@ -17,6 +18,7 @@ type HotsiteArray = {
 
 export const SliderHotsite = () => {
     const [hotsitesArray, setHotsitesArray] = useState<HotsiteArray[]>([]);
+    const {setCursorVariant} = useMouseContext();
 
     useEffect(() => {
         const newArray: HotsiteArray[] = [];
@@ -43,7 +45,10 @@ export const SliderHotsite = () => {
 
     return (
         <motion.div variants={belowAnimation} initial="hidden" animate="visible">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white pb-5">Hotsites</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-white pb-5 w-fit"
+            onMouseEnter={() => setCursorVariant("titles")} onMouseLeave={() => setCursorVariant("default")}>
+                Hotsites
+            </h2>
             <Swiper
                 effect={'coverflow'}
                 grabCursor={true}
