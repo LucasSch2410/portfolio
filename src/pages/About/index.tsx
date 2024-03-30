@@ -1,12 +1,13 @@
 import { default as profile_pic } from "../../assets/profile-pic.jpeg"
 import { useMouseContext } from "../../context/mouseContext";
+import { motion } from "framer-motion";
 
 export const About = () => {
     const {setCursorVariant} = useMouseContext();
 
     return (
         <main className="max-w-5xl mx-auto flex-col py-6 px-10 md:px-0">
-            <section className="max-w-5xl flex flex-col justify-start py-8">
+            <motion.section className="max-w-5xl flex flex-col justify-start py-8" initial={{ scale: 0 }} animate={{ scale: 1 }}>
                 <div className="grid grid-cols-2 flex-col-reverse lg:flex-row gap-10">
                     <div className="order-1 col-span-2 flex flex-col gap-8 sm:w-1/2 mx-auto"
                         onMouseEnter={() => setCursorVariant("titles")} onMouseLeave={() => setCursorVariant("default")}>
@@ -38,7 +39,7 @@ export const About = () => {
                         <img src={profile_pic} alt="Lucas Schroeder"/>
                     </div>
                 </div>
-            </section>
+            </motion.section>
         </main>
     )
 }
