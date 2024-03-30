@@ -2,7 +2,7 @@ import { ButtonRotateBorder } from "../../components/ButtonRotateBorder/ButtonRo
 import { motion } from "framer-motion"
 import { GithubLogo, LinkedinLogo, WhatsappLogo, Copy } from "@phosphor-icons/react";
 
-export default function SocialTitle() {
+export const SocialTitle = () => {
     const container = {
         hidden: { opacity: 1, scale: 0 },
         visible: {

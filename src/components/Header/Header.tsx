@@ -1,6 +1,6 @@
 import { AnimatedTabs } from "../AnimatedTabs/AnimatedTabs";
 
-export function Header() {
+export const Header = () => {
     return (
         <header>
             <div className="max-w-5xl mx-auto px-10 md:px-0">

@@ -2,11 +2,11 @@ import { motion, useAnimation, useInView } from "framer-motion"
 import { useEffect, useRef } from "react";
 import * as icons from "../../utils/tinyIconHandler"
 
-export function Footer() {
+export const Footer = () => {
 
     const controls = useAnimation();
     const ref = useRef(null)
-    const isInView = useInView(ref, { amount: 0.5 });
+    const isInView = useInView(ref, { amount: 0.3 });
 
     useEffect(() => {
         if (isInView) {
@@ -87,17 +87,17 @@ export function Footer() {
     ]
 
     return (
-        <motion.footer ref={ref} className="max-w-5xl mx-auto py-10 px-10 md:px-0" initial="hidden" animate={controls} variants={{
+        <motion.footer ref={ref} className="max-w-5xl mx-auto pb-8 lg:py-10 px-10 md:px-0" initial="hidden" animate={controls} variants={{
             visible: {
                 transition:
                 {
-                    delayChildren: 0.3,
+                    delayChildren: 0.2,
                     staggerChildren: 0.25
                 }
             },
             hidden: {}
         }}>
-            <motion.div className=" bg-neutral-900 border border-neutral-700 rounded-xl" variants={defaultAnimations}>
+            <motion.div className="bg-neutral-900 border border-neutral-700 rounded-xl" variants={defaultAnimations}>
                 <div className="p-4">
                     <h3 className="text-2xl lg:text-xl font-semibold whitespace-nowrap text-neutral-100">Contato e redes sociais</h3>
                     <p className="text-lg lg:text-base text-neutral-400 mt-2">Algumas das minhas redes sociais e formas de contato.</p>

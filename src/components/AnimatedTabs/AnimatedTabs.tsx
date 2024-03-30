@@ -18,7 +18,7 @@ function Tabs({
     containerClassName?: string;
     activeTabClassName?: string;
     tabClassName?: string;
-}) {
+}): JSX.Element {
     const [activeIdx, setActiveIdx] = useState<string>("");
 
     return (
@@ -59,7 +59,7 @@ function Tabs({
     );
 }
 
-export function AnimatedTabs() {
+export const AnimatedTabs = () => {
     const tabs = [
         {
             title: "Home",
@@ -77,7 +77,7 @@ export function AnimatedTabs() {
 
     return (
         <div className="relative flex flex-col w-full items-end justify-center">
-            <Tabs tabs={tabs} containerClassName="my-5" />
+            <Tabs tabs={tabs} />
         </div>
     );
 }

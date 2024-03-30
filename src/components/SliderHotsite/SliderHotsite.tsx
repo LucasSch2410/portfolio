@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import * as hotsites from "../../utils/hotsitesHandler"
-import { motion, useAnimation, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
@@ -15,7 +15,7 @@ type HotsiteArray = {
     url: string
 }
 
-export function SliderHotsite() {
+export const SliderHotsite = () => {
     const [hotsitesArray, setHotsitesArray] = useState<HotsiteArray[]>([]);
 
     useEffect(() => {
@@ -26,19 +26,6 @@ export function SliderHotsite() {
         setHotsitesArray(newArray);
     }, []);
 
-    const hotsiteControls = useAnimation();
-    const hotsiteRef = useRef(null)
-    const hotsiteIsInView = useInView(hotsiteRef, { amount: 0.5 });
-
-    useEffect(() => {
-        if (hotsiteIsInView) {
-            hotsiteControls.start("visible");
-        } else {
-            hotsiteControls.start("hidden");
-        }
-
-    }, [hotsiteIsInView]);
-
     const belowAnimation = {
         hidden: {
             opacity: 0,
@@ -48,14 +35,14 @@ export function SliderHotsite() {
             opacity: 1,
             y: 0,
             transition: {
-                delay: 0.3,
-                duration: 0.2,
+                duration: 0.5
             },
+            
         },
     };
 
     return (
-        <motion.div ref={hotsiteRef} className="py-8" variants={belowAnimation} initial="hidden" animate={hotsiteControls}>
+        <motion.div variants={belowAnimation} initial="hidden" animate="visible" className="py-8">
             <h2 className="text-3xl lg:text-4xl font-bold text-white pb-5">Hotsites</h2>
             <Swiper
                 effect={'coverflow'}
@@ -82,8 +69,6 @@ export function SliderHotsite() {
             </Swiper>
         </motion.div>
     );
-
-
 }
 
 

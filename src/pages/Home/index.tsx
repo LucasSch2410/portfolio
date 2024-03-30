@@ -1,12 +1,12 @@
 import { AnimatedText } from "../../components/AnimatedText/AnimatedText";
 import { Stacks } from "../../components/Stacks/Stacks"
-import AllCards from "../../components/AllCards/AllCards";
-import SocialTitle from "../../components/SocialTitle/SocialTitle";
+import { AllCards } from "../../components/AllCards/AllCards";
+import { SocialTitle } from "../../components/SocialTitle/SocialTitle";
 
-export default function Home() {
+export const Home = () => {
     return (
-        <main className="max-w-5xl mx-auto flex-col py-6 px-10 md:px-0">
-            <section className="max-w-5xl flex flex-col justify-start gap-4 mx-auto py-8 overflow">
+        <main className="max-w-5xl mx-auto py-6 px-10 md:px-0">
+            <section className="max-w-5xl py-8">
                 <SocialTitle />
             </section>
 
@@ -23,7 +23,7 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="max-w-5xl flex flex-col justify-start mx-auto mt-14">
+            <section className="max-w-5xl mx-auto mt-14">
                 <AllCards />
             </section>
         </main>

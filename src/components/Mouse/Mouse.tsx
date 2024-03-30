@@ -2,7 +2,9 @@ import useMouse from "@react-hook/mouse-position";
 import { motion } from "framer-motion"
 // import { useState } from "react";
 
-export function Mouse({ refMouse }: any) {
+export const Mouse = ({ 
+    refMouse 
+}: any) => {
     // const [cursorText, setCursorText] = useState("");
     // const [cursorVariant, setCursorVariant] = useState("project");
 

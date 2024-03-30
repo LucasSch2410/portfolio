@@ -50,7 +50,7 @@ function useMenuAnimation(isOpen: boolean) {
     return scope;
 }
 
-export function DropdownMenu() {
+export const DropdownMenu = () => {
     const [isOpen, setIsOpen] = useState(false);
     const scope = useMenuAnimation(isOpen);
 

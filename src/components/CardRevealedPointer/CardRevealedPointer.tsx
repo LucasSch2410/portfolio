@@ -7,7 +7,9 @@ interface DivProps extends HTMLAttributes<HTMLDivElement> {
     title: string;
 }
 
-export function CardRevealedPointer({ children, title }: DivProps) {
+export const CardRevealedPointer = ({ 
+    children, title 
+}: DivProps) => {
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
 

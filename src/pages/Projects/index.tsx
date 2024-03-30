@@ -1,9 +1,16 @@
 import { SliderHotsite } from "../../components/SliderHotsite/SliderHotsite";
+import { Repositories } from "../../components/Repositories/Repositories";
 
-export default function Projects() {
+export const Projects = () => {
+
     return (
-        <main className="max-w-5xl mx-auto flex-col py-6 px-10 md:px-0">
-            <SliderHotsite />
+        <main className="max-w-5xl mx-auto py-6 px-10 md:px-0">
+            <section>
+                <SliderHotsite />
+            </section>
+            <section>
+                <Repositories/>
+            </section>
         </main>
     )
 }

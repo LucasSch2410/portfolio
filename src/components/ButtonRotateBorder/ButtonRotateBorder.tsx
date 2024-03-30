@@ -15,9 +15,9 @@ const item = {
     }
 };
 
-
-export function ButtonRotateBorder({ children, copyEmail }: ButtonProps) {
-
+export const ButtonRotateBorder = ({ 
+    children, copyEmail 
+}: ButtonProps) => {
     const handleClick = () => {
         if (copyEmail) {
             navigator.clipboard.writeText("lucasschroeder2410@gmail.com");

@@ -4,7 +4,9 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     children: ReactNode;
 }
 
-export function ButtonBackgroundShine({ children }: ButtonProps) {
+export const ButtonBackgroundShine = ({
+    children 
+}: ButtonProps) => {
     return (
         <button className="inline-flex animate-shine items-center justify-center rounded-2xl text-base border border-neutral-700 
       bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-4 py-2 font-medium 
