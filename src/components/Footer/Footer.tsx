@@ -1,12 +1,15 @@
 import { motion, useAnimation, useInView } from "framer-motion"
 import { useEffect, useRef } from "react";
 import * as icons from "../../utils/tinyIconHandler"
+import { useMouseContext } from "../../context/mouseContext";
 
 export const Footer = () => {
-
+    
+    const {setCursorVariant} = useMouseContext();
     const controls = useAnimation();
     const ref = useRef(null)
     const isInView = useInView(ref, { amount: 0.3 });
+
 
     useEffect(() => {
         if (isInView) {
@@ -105,7 +108,7 @@ export const Footer = () => {
                 <div className="h-[1px] bg-neutral-700"></div>
                 <div className="max-w-xl grid grid-cols-5 gap-y-10 lg:gap-0 lg:flex lg:justify-between p-4 mx-auto my-8 lg:my-4">
                     {socialIcons.map((icon, iconIndex) => (
-                        <motion.div className="flex flex-col items-center" whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }} key={iconIndex}>
+                        <motion.div className="flex flex-col items-center" whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }} key={iconIndex} onMouseEnter={() => setCursorVariant("contact")} onMouseLeave={() => setCursorVariant("default")}>
                             <div className="w-[35px] h-[35px] bg-[white] rounded">
                                 <a href={icon.url} target="_blank">
                                     <img className="p-1.5" src={icon.icon} alt={icon.name} />

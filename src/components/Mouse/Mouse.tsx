@@ -1,12 +1,11 @@
 import useMouse from "@react-hook/mouse-position";
 import { motion } from "framer-motion"
-// import { useState } from "react";
+import { useMouseContext } from "../../context/mouseContext";
 
 export const Mouse = ({ 
     refMouse 
 }: any) => {
-    // const [cursorText, setCursorText] = useState("");
-    // const [cursorVariant, setCursorVariant] = useState("project");
+    const {cursorVariants} = useMouseContext();
 
     const mouse = useMouse(refMouse, {
         fps: 165
@@ -25,11 +24,7 @@ export const Mouse = ({
 
     const variants = {
         default: {
-            opacity: 0,
-        },
-        project: {
             opacity: 1,
-            // backgroundColor: "rgba(255, 255, 255, 0.6)",
             backgroundColor: "#fff",
             color: "#000",
             height: 50,
@@ -38,19 +33,32 @@ export const Mouse = ({
             x: mouseXPosition - 22,
             y: mouseYPosition - 22,
             transition: {
-                type: "tween",
-                duration: 0
-            }
+                opacity: { duration: 0.2 },
+                backgroundColor: { duration: 0.2 },
+                height: { duration: 0.2 },
+                width: { duration: 0.2 },
+                fontSize: { duration: 0.2 },
+                x: { type: "tween", duration: 0 },
+                y: { type: "tween", duration: 0 }
+              }
         },
         contact: {
             opacity: 1,
-            backgroundColor: "#FFBCBC",
+            backgroundColor: "#fff",
             color: "#000",
-            height: 64,
-            width: 64,
-            fontSize: "32px",
-            x: mouseXPosition,
-            y: mouseYPosition
+            height: 20,
+            width: 20,
+            fontSize: "18px",
+            x: mouseXPosition - 12,
+            y: mouseYPosition - 12,
+            transition: {
+                backgroundColor: { duration: 0.2 },
+                height: { duration: 0.2 },
+                width: { duration: 0.2 },
+                fontSize: { duration: 0.2 },
+                x: { type: "tween", duration: 0.1 },
+                y: { type: "tween", duration: 0.1 },
+              }
         }
     };
 
@@ -64,11 +72,6 @@ export const Mouse = ({
     //     setCursorVariant("default");
     // }
 
-    // function contactEnter() {
-    //     setCursorText("👋");
-    //     setCursorVariant("contact");
-    // }
-
     // function contactLeave() {
     //     setCursorText("");
     //     setCursorVariant("default");
@@ -80,7 +83,7 @@ export const Mouse = ({
             :
             <motion.div variants={variants}
                 className="circle"
-                animate={"project"}>
+                animate={cursorVariants}>
                 <span className='cursorText'></span>
             </motion.div>
         }

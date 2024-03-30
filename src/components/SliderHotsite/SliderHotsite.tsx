@@ -42,7 +42,7 @@ export const SliderHotsite = () => {
     };
 
     return (
-        <motion.div variants={belowAnimation} initial="hidden" animate="visible" className="py-8">
+        <motion.div variants={belowAnimation} initial="hidden" animate="visible">
             <h2 className="text-3xl lg:text-4xl font-bold text-white pb-5">Hotsites</h2>
             <Swiper
                 effect={'coverflow'}

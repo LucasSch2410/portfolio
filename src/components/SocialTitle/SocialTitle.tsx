@@ -1,8 +1,12 @@
 import { ButtonRotateBorder } from "../../components/ButtonRotateBorder/ButtonRotateBorder"
 import { motion } from "framer-motion"
 import { GithubLogo, LinkedinLogo, WhatsappLogo, Copy } from "@phosphor-icons/react";
+import { useMouseContext } from "../../context/mouseContext";
 
 export const SocialTitle = () => {
+    const {setCursorVariant} = useMouseContext();
+
+
     const container = {
         hidden: { opacity: 1, scale: 0 },
         visible: {
@@ -63,7 +67,7 @@ export const SocialTitle = () => {
 
                     {social.map((item, itemIndex) => (
                         <ButtonRotateBorder key={itemIndex}>
-                            <a className="flex items-center justify-center w-full gap-2 px-4 py-2 text-2xl md:text-xl lg:text-base" title={item.title} href={item.link} target="_blank">
+                            <a className="flex items-center justify-center w-full gap-2 px-4 py-2 text-2xl md:text-xl lg:text-base" title={item.title} href={item.link} target="_blank" onMouseEnter={() => setCursorVariant("contact")} onMouseLeave={() => setCursorVariant("default")}>
                                 <span className="subpixel-antialiased">{item.title}</span>
                                 <item.logo />
                             </a>
@@ -71,7 +75,7 @@ export const SocialTitle = () => {
                     ))}
 
                     <ButtonRotateBorder copyEmail>
-                        <div className="flex items-center justify-center w-full gap-2 px-4 py-2 text-2xl md:text-xl lg:text-base">
+                        <div className="flex items-center justify-center w-full gap-2 px-4 py-2 text-2xl md:text-xl lg:text-base" onMouseEnter={() => setCursorVariant("contact")} onMouseLeave={() => setCursorVariant("default")}>
                             <span>E-mail</span>
                             <Copy />
                         </div>

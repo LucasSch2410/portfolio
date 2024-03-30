@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import { Home } from '../pages/Home';
 import { Projects } from '../pages/Projects';
+import { About } from '../pages/About';
 import { Header } from '../components/Header/Header';
 import { Footer } from '../components/Footer/Footer'
 import { Mouse } from '../components/Mouse/Mouse';
@@ -18,7 +19,8 @@ export default function AllRoutes() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/projects" element={<Projects />} />
-                    <Route path="/*" element={<NotFound />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/*" element={<NotFound/>} />
                 </Routes>
                 <Footer />
                 <Mouse refMouse={refMouse} />

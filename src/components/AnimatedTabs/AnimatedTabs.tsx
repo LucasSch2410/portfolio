@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { cn } from "../../utils/cn";
+import { useMouseContext } from "../../context/mouseContext";
 
 type Tab = {
     title: string;
@@ -21,6 +22,8 @@ function Tabs({
 }): JSX.Element {
     const [activeIdx, setActiveIdx] = useState<string>("");
 
+    const {setCursorVariant} = useMouseContext();
+
     return (
         <div
             className={cn(
@@ -29,7 +32,7 @@ function Tabs({
             )}
         >
             {tabs.map((tab, tabIndex) => (
-                <Link to={"/" + tab.value} key={tabIndex}>
+                <Link to={tab.value} key={tabIndex} onMouseEnter={() => setCursorVariant("contact")} onMouseLeave={() => setCursorVariant("default")}>
                     <button
                         onClick={() => setActiveIdx(tab.value)}
                         className={cn(
@@ -41,7 +44,7 @@ function Tabs({
                             transformStyle: "preserve-3d",
                         }}
                     >
-                        {location.pathname === "/" + tab.value && (
+                        {location.pathname === tab.value && (
                             <motion.div
                                 layoutId="clickedbutton"
                                 transition={{ type: "spring", bounce: 0.3, duration: 0.6 }}
@@ -63,15 +66,15 @@ export const AnimatedTabs = () => {
     const tabs = [
         {
             title: "Home",
-            value: "",
+            value: "/",
         },
         {
             title: "Projetos",
-            value: "projects",
+            value: "/projects",
         },
         {
             title: "Sobre",
-            value: "about",
+            value: "/about",
         },
     ];
 

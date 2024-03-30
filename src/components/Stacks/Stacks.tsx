@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import * as icons from '../../utils/stacksHandler';
+import { useMouseContext } from "../../context/mouseContext";
 
 const container = {
     hidden: { opacity: 1, scale: 0 },
@@ -31,6 +32,8 @@ const item = {
 
 export const Stacks = () => {
     const constraintsRef = useRef(null);
+    const {setCursorVariant} = useMouseContext();
+
 
     const stacks = [
         {
@@ -91,7 +94,8 @@ export const Stacks = () => {
                 {stacks.map((stack, stackIndex) => (
                     <motion.div className="text-white flex flex-col items-center"
                     variants={item} key={stackIndex}
-                    whileHover={item.whileHover} whileTap={item.whileTap}>
+                    whileHover={item.whileHover} whileTap={item.whileTap}
+                    onMouseEnter={() => setCursorVariant("contact")} onMouseLeave={() => setCursorVariant("default")}>
                         <div className="w-[50px] h-[50px] bg-[white] rounded-2xl overflow-hidden p-1.5 col-span-1">
                             <img src={stack.image} alt={stack.name} draggable="false" />
                         </div>
