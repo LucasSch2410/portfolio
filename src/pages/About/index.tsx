@@ -7,7 +7,7 @@ export const About = () => {
 
     return (
         <main className="max-w-5xl mx-auto flex-col py-6 px-10 md:px-0">
-            <motion.section className="max-w-5xl flex flex-col justify-start py-8" initial={{ scale: 0 }} animate={{ scale: 1 }}>
+            <motion.section className="max-w-5xl flex flex-col justify-start py-8" initial={{ scale: 0.2 }} animate={{ scale: 1 }} transition={{ type: "spring", damping: 48, stiffness: 400,  mass: 2.3 }}>
                 <div className="grid grid-cols-2 flex-col-reverse lg:flex-row gap-10">
                     <div className="order-1 col-span-2 flex flex-col gap-8 sm:w-1/2 mx-auto"
                         onMouseEnter={() => setCursorVariant("titles")} onMouseLeave={() => setCursorVariant("default")}>
