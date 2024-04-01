@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import * as hotsites from "../../utils/hotsitesHandler"
-import { motion } from 'framer-motion';
 
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
@@ -17,6 +16,7 @@ type HotsiteArray = {
 }
 
 export const SliderHotsite = () => {
+    const [loading, setLoading] = useState(false);
     const [hotsitesArray, setHotsitesArray] = useState<HotsiteArray[]>([]);
     const {setCursorVariant} = useMouseContext();
 
@@ -26,25 +26,15 @@ export const SliderHotsite = () => {
             newArray.push({ name: key, url: value });
         }
         setHotsitesArray(newArray);
+
+        setTimeout(() => {
+            setLoading(true)
+        }, 1000);
     }, []);
 
-    const belowAnimation = {
-        hidden: {
-            opacity: 0,
-            y: 20,
-        },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.5
-            },
-            
-        },
-    };
 
-    return (
-        <motion.div variants={belowAnimation} initial="hidden" animate="visible">
+    return !loading ? "" : (
+        <div>
             <h2 className="text-3xl lg:text-4xl font-bold text-white pb-5 w-fit"
             onMouseEnter={() => setCursorVariant("titles")} onMouseLeave={() => setCursorVariant("default")}>
                 Hotsites
@@ -72,7 +62,7 @@ export const SliderHotsite = () => {
                     </SwiperSlide>
                 ))}
             </Swiper>
-        </motion.div>
+        </div>
     );
 }
 
