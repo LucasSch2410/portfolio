@@ -2,14 +2,12 @@ import useMouse from "@react-hook/mouse-position";
 import { motion } from "framer-motion"
 import { useMouseContext } from "../../context/mouseContext";
 
-export const Mouse = ({ 
-    refMouse 
+export const Mouse = ({
+    refMouse
 }: any) => {
-    const {cursorVariants} = useMouseContext();
+    const { cursorVariants } = useMouseContext();
 
-    const mouse = useMouse(refMouse, {
-        fps: 75
-    });
+    const mouse = useMouse(refMouse);
 
     let mouseXPosition = -100;
     let mouseYPosition = -100;
@@ -40,7 +38,7 @@ export const Mouse = ({
                 fontSize: { duration: 0.2 },
                 x: { type: "spring", duration: 0.1 },
                 y: { type: "spring", duration: 0.1 }
-              }
+            }
         },
         contact: {
             opacity: 1,
@@ -57,7 +55,7 @@ export const Mouse = ({
                 width: { duration: 0.2 },
                 x: { type: "spring", duration: 0.1 },
                 y: { type: "spring", duration: 0.1 },
-              }
+            }
         },
         titles: {
             opacity: 1,
@@ -76,7 +74,7 @@ export const Mouse = ({
                 fontSize: { duration: 0.2 },
                 x: { type: "spring", duration: 0.1 },
                 y: { type: "spring", duration: 0.1 }
-              }
+            }
         },
         mouseOut: {
             opacity: 0,
@@ -85,37 +83,22 @@ export const Mouse = ({
 
             transition: {
                 opacity: { type: "tweek", duration: 0 },
-                x: { type: "tweek", duration: 0},
-                y: { type: "tweek", duration: 0}
+                x: { type: "tweek", duration: 0 },
+                y: { type: "tweek", duration: 0 }
             }
         }
     };
 
-    // function projectEnter() {
-    //     setCursorText("");
-    //     setCursorVariant("project");
-    // }
-
-    // function projectLeave() {
-    //     setCursorText("");
-    //     setCursorVariant("default");
-    // }
-
-    // function contactLeave() {
-    //     setCursorText("");
-    //     setCursorVariant("default");
-    // }
-
     return (
         <> {window.innerWidth < 768
             ? <></>
-            :
-            <motion.div variants={variants}
-                className={"circle " + cursorVariants}
-                animate={cursorVariants}>
-                <span className='cursorText'></span>
-            </motion.div>
-        }
+            : (
+                <motion.div variants={variants}
+                    className={"circle " + cursorVariants}
+                    animate={cursorVariants}>
+                    <span className='cursorText'></span>
+                </motion.div>
+            )}
         </>
     )
 }
